@@ -1,0 +1,782 @@
+/***** FONTS *****/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/***** COLOR *****/
+:root {
+    --primary-gold: #FFD700;
+    --primary-green: #1D5E24;
+    --secondary-orange: #DA8A2A;
+    --secondary-dark-brown: #5A3E1B;
+    --secondary-steel-gray: #666666;
+    --color-light: #ffff;
+    --text-light: #444;
+    --background-light: #f6f6f6;
+}
+
+/***** DEFAULT *****/
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    background: var(--background-light);
+}
+
+:is(h1, h2, h3, span) {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.55rem;
+    text-align: center;
+}
+
+
+:is(h3, p, a) {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 5rem;
+    height: auto;
+}
+
+
+/***** SAME STYLE *****/
+:is(header, .heading, nav ul) {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    padding: 0.2rem;
+    border-radius: 100%;
+    object-position: center;
+    object-fit: contain;
+    background-color: var(--primary-green);
+}
+
+
+/***** HEADER AND NAVIGATION *****/
+header {
+    padding: 0.7rem 2rem;
+    justify-content: space-between;
+    background-color: var(--primary-gold);
+
+    & .heading {
+        gap: 1.2rem;
+
+    
+        & span {
+            color: var(--primary-green);
+        }
+    }
+}
+
+nav {
+    margin: 1rem 0;
+
+    & ul {
+        gap: 2rem;
+    }
+
+    & li {
+        transition: all 0.3s ease;
+    }
+
+    & li:hover {
+        color: var(--primary-green);
+    }
+
+    & .search-container {
+        display: flex;
+        margin-top: 1rem;
+        align-items: center;
+        border-radius: 1rem;
+        overflow: hidden;
+        background: white;
+
+        & input {
+            padding: 0.5rem;
+            border: none;
+            outline: none;
+            width: 100%;
+        }
+
+        & button {
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: var(--secondary-orange);
+            }
+        }
+    }
+    
+}
+
+
+
+
+/***** HERO SECTION *****/
+.hero {
+    height: 65vh;
+    width: 100%;
+    justify-content: center;
+    overflow: hidden;
+    margin: unset;
+    color: var(--color-light);
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url(../IMAGES/banner-3.jpg) no-repeat center center/cover;
+
+    & h2 {
+        font-size: 3rem;
+    }
+
+    & p {
+        text-align: center;
+    }
+
+    & .btn {
+        padding: 0.8rem 1.5rem;
+        border-radius: 1rem;
+        font-weight: bold;
+        color: #000;
+        background-color: var(--primary-gold);
+        transition: all 0.3s ease;
+    }
+
+    & .btn:hover {
+        background-color: var(--secondary-orange);
+        transform: translateY(-0.2rem);
+    }
+}
+
+
+/***** MAIN SECTION *****/
+main {
+    padding: 1rem;
+    background-color: var(--background-light);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+
+    & .section-title {
+        justify-self: center;
+        margin-bottom: 1rem;
+        width: fit-content;
+        color: var(--primary-green);
+
+        &:after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 0.3rem;
+            margin: 0.5rem auto;
+            border-radius: 2rem;
+            background-color: var(--secondary-orange);
+        }
+    }
+}
+
+main section:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 3rem;
+    width: 100%;
+    height: 100%;
+}
+
+
+/***** EVENTS SECTION *****/
+.event-card {
+    flex-basis: 31%;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    background-color: var(--color-light);
+    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+
+    & .event-img {
+        height: 14em;
+        overflow: hidden;
+        
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: all 0.3s ease;
+        }
+    }
+
+    & .event-content {
+        padding: 0.8rem;
+        
+        & :not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+
+        & .event-date {
+            font-size: 1rem;
+            color: var(--secondary-orange);
+        }
+
+        & .event-title {
+            color: var(--primary-green);
+        }
+
+        & .event-description {
+            font-size: 0.9rem;
+            text-align: justify;
+            color: var(--text-light);
+        }
+
+    }
+}
+
+.event-card:hover {
+    transform: translateY(-0.5rem);
+
+    & .event-img img {
+        transform: scale(1.03);
+    }
+}
+
+
+/***** STORIES SECTION *****/
+.story-card {
+    flex-basis: 31%;
+    max-width: 25rem;   
+    border-radius: 0.8rem;
+    overflow: hidden;
+    background-color: var(--color-light);
+    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+
+    & .story-img {
+        height: 14em;
+        overflow: hidden;
+        
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: all 0.3s ease;
+        }
+    }
+
+    & .story-content {
+        padding: 0.8rem;
+        
+        & :not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+
+        & :is(.story-summary, .read-more) {
+            font-size: 0.9rem;
+        }
+
+        & .story-credits {
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Poppins', sans-serif;
+            color: var(--secondary-steel-gray);
+        }
+
+        & .story-title {
+            color: var(--primary-green);
+        }
+
+        & .story-summary {
+
+            text-align: justify;
+            color: var(--secondary-steel-gray);
+        }
+
+        & .read-more {
+            color: var(--secondary-orange);
+        }
+    }
+}
+
+.stories .content{
+    position: relative;
+    padding-bottom: 16rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+
+    &:target {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
+.pop-up {
+    padding: 2rem;
+    width: 90%;
+    max-width: 50rem;
+    max-height: 80vh;
+    margin: 10vh auto;
+    position: relative;
+    background: var(--color-light);
+    box-shadow: 0 0 10rem rgba(0, 0, 0, 0.8);
+    border: 0.1rem solid var(--secondary-steel-gray);
+    overflow: auto;
+
+    & h2 {
+        margin: unset;
+    }
+
+    & .close {
+        position: absolute;
+        overflow: hidden;
+        width: 1.8rem;
+        height: 1.8rem;
+        font-size: 1.9rem;
+        top: 0.5rem;
+        right: 1rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    & .pop-up-content {
+        overflow: auto;
+
+        & p {
+            line-height: 2rem;
+            font-size: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+
+/***** GALLERY SECTION *****/
+.photo-card {
+    position: relative;
+    max-width: 18rem;
+    max-height: 18rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    background-color: var(--color-light);
+    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
+    /* transition: all 0.3s ease; */
+
+    & .photo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        transition: all 0.3s ease;
+    }
+
+    & .photo-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0.5rem;
+        color: var(--color-light);
+        background: rgba(0,0,0,0.8);
+        transform: translateY(100%);
+        transition: all 0.3s ease;
+
+        & p {
+            font-size: 1rem;
+        }
+    }
+}
+
+.photo-card:nth-child(-n+3) {
+    margin-bottom: 1rem;
+}
+
+.photo-card:hover .photo-caption {
+    transform: translateY(0);
+}
+
+.photo-card:hover img {
+    transform: scale(1.03);
+}
+
+
+/***** TEAMS SECTION *****/
+.team-card {
+    flex-basis: 23.3%;
+    text-align: center;
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    overflow: hidden;
+    background-color: var(--color-light);
+    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+
+    & .team-logo {
+        width: 6rem;
+        height: 6rem;
+        border: 0.3rem solid var(--secondary-orange);
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 0.8rem;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    & :is(.team-name, .team-achievement) {
+        font-size: 1.1rem;
+    }
+
+    & .team-name {
+        color: var(--primary-green);
+    }
+
+    & .team-achievement {
+        color: var(--secondary-orange);
+        font-weight: bold;
+    }
+
+    & .team-description {
+        font-size: 1rem;
+        color: var(--secondary-steel-gray);
+    }
+}
+
+.team-card:nth-child(-n+16) {
+    margin-bottom: 1rem;
+}
+
+.team-card:last-of-type {
+    margin: 0 auto;
+}
+
+
+/***** NEWS SECTION *****/
+.news-card {
+    flex-basis: 100%;
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    overflow: hidden;
+    background-color: var(--color-light);
+    border-left: 0.3rem solid var(--primary-green);
+    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+
+    & :not(:last-child) {
+        margin-bottom: 0.5rem;
+    }
+
+    & :is(.news-date, .news-content) {
+        color: var(--secondary-steel-gray);
+    }
+
+    & .news-date {
+        font-size: 0.9rem;
+    }
+
+    & .news-title {
+        font-size: 1.1rem;
+        color: var(--primary-green);
+    }
+
+    & .news-content {
+        font-size: 1rem;
+    }
+}
+
+.news-card:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+
+/***** FOOTER SECTION *****/
+footer {
+    padding: 1.5rem 5rem;
+    background-color: #1D5E24;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content {
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+
+    & :is(p, a) {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: var(--color-light);
+    }
+
+    & h3 {
+        font-size: 1.1rem;
+        color: var(--primary-gold);
+        margin-bottom: 1rem;
+    }
+
+    & a {
+        transition: all 0.3s ease;
+    }
+
+    & a:hover {
+        color: var(--primary-gold);
+    }
+
+    & .social-links {
+        display: flex;
+        margin-top: 1rem;
+        gap: 1rem;
+
+        & a {
+            display: flex;
+            padding: 0.5rem;
+            height: max-content;
+            border-radius: 50%;
+            color: var(--primary-green);
+            background-color: var(--primary-gold);
+        }
+
+        & a:hover {
+            color: var(--primary-gold);
+            background-color: var(--secondary-orange);
+        }
+
+    }
+}
+
+
+/***** RESPONSIVE STYLES SECTION *****/
+
+@media screen and (max-width: 1024px) {
+    /***** HEADER SECTION *****/
+    nav ul {
+        gap: 1.5rem;
+    }
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+
+    /***** TEAMS SECTION *****/
+    .teams .content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 899px) {
+    /***** MAIN SECTION *****/
+    .content {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+
+    /***** HEADER SECTION  *****/
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: row;
+        margin-top: 1.2rem;
+        gap: 1rem;
+    }
+
+
+    /***** HERO SECTION  *****/
+    .hero {
+        height: 50vh;
+        padding: 1rem;
+        background: auto;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+
+    /***** CARDS SECTION  *****/
+    :is(.events, .stories, .teams, .gallery) :is(.content) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: 1rem;
+    }
+
+    .stories .content {
+        padding-bottom: unset;
+    }
+
+
+    :is(.event-card, .story-card, .team-card) {
+        width: 100%;
+    }
+
+    .pop-up {
+        padding: 1.5rem;
+        width: 90%;
+        max-width: 35rem;
+
+        & .close {
+            height: 1.7rem;
+            width: 1.7rem;
+            font-size: 1.7rem;
+            right: 0.8rem;
+            top: 0.3rem;
+        }
+    }
+
+    .photo-card {
+        width: 100%;
+    }
+
+    /***** FOOTER SECTION *****/
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    /***** HEADING  *****/
+    nav li a{
+        font-size: 1rem;
+    }
+
+    .heading {
+        & .title {
+            font-size: 1.5rem;
+        }
+
+        & .logo {
+           width: 3.5rem;
+        }
+    }
+
+
+    /***** HERO SECTION *****/
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+
+    /***** CARDS SECTION *****/
+    .teams .content {
+        display: flex;
+    }
+    
+    :is(.gallery, .stories, .events) :is(.content) {
+        grid-template-columns: 1fr;
+    }
+
+    .pop-up {
+        padding: 1rem;
+        font-size: 0.9rem;
+
+        & .close {
+            height: 1.4rem;
+            width: 1.4rem;
+            font-size: 1.4rem;
+            right: 0.8rem;
+            top: 0.3rem;
+        }
+    
+    }
+
+    .team-card {
+        flex-basis: 100%;
+    }
+
+    /***** FOOTER SECTION *****/
+    .footer-content {
+        flex-basis: 100%;
+
+        & :is(p, a) {
+            font-size: 0.8rem;
+        }
+
+        & h3 {
+            font-size: 1rem;
+        }
+
+        & .social-links a {
+            padding: 0.2rem;
+        }
+    }
+}
