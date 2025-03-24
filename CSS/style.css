@@ -188,7 +188,7 @@ nav {
     overflow: hidden;
     margin: unset;
     color: var(--color-light);
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url(../IMAGES/banner-3.jpg) no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url(../IMAGES/banner-2.jpg) no-repeat center center/cover;
 
     & h2 {
         font-size: 3rem;
@@ -763,12 +763,20 @@ footer {
 
 
     /***** HERO SECTION *****/
+    .hero {
+        line-height: 1.5rem;
+    }
+
     .hero h2 {
         font-size: 1.8rem;
     }
 
     .hero p {
         font-size: 0.9rem;
+    }
+
+    .hero a {
+        font-size: 1rem;
     }
 
 
