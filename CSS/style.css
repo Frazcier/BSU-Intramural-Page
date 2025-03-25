@@ -584,8 +584,10 @@ main section:last-of-type {
 
 /***** FOOTER SECTION *****/
 footer {
+    position: relative;
     padding: 1.5rem 5rem;
     background-color: #1D5E24;
+    overflow: hidden;
 }
 
 .footer-container {
@@ -641,6 +643,38 @@ footer {
     }
 }
 
+
+/***** EASTER EGG SECTION *****/
+.easter-egg {
+    & .hover-btn {
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        left: 0;
+        top: 0;
+        border-radius: 50%;
+    }
+
+    & .pedro {
+        position: absolute;
+        border-radius: 50%;
+        width: 8rem;
+        height: 8rem;
+        right: 1%;
+        bottom: 2%;
+        transform: translateY(105%);
+        object-fit: cover;
+        transition: all 0.3s ease;
+    }
+
+    & .hover-btn:hover + .pedro {
+        transform: translateY(0);
+    }
+}
+
+.hover-btn:hover .easter-egg img {
+    transform: translateY(0);
+}
 
 /***** RESPONSIVE STYLES SECTION *****/
 
@@ -742,6 +776,10 @@ footer {
         align-items: center;
         text-align: center;
         margin-top: 1rem;
+    }
+
+    .pedro {
+        transform: translateY(120%);
     }
 }
 
